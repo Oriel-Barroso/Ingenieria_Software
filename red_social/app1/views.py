@@ -30,3 +30,9 @@ def get_user(req):
     user = User.objects.filter(username=nombre).values()
     print(user, 'PRINT DEL USUARIO')
     return HttpResponse(user, status=200)
+
+@csrf_exempt 
+@api_view(('GET',))
+def get_all_users(req):
+    user = User.objects.all().values()
+    return HttpResponse(user, status=200)
