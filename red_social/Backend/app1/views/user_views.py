@@ -20,5 +20,5 @@ class Users():
     def get_all_users(req):
         user = user_models.Users.objects.all().values()
         return HttpResponse(user, status=200)
+    
 
-  
