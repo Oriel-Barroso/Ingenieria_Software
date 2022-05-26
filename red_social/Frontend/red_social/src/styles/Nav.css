@@ -1,0 +1,30 @@
+.container{
+    background: linear-gradient(to bottom, rgb(77, 174, 17) 0%, rgb(61, 138, 25) 100%);
+    margin: 0px auto;
+    margin-bottom: 10px;
+
+}    
+.tittle{
+    font-size: 30px;
+    text-align: center;
+    align-content: center;
+    width: 300px;
+    
+}
+.back-tittle{
+    display: flex;
+    justify-content: center;
+    color: rgb(240, 214, 167)
+     
+}
+.subcontainer{
+    display: flex;
+    justify-content: center;
+}
+.logout{
+    background-color: aliceblue;
+    text-align: right;
+    border-radius: 30px 30px 30px 30px;
+    width: 100px;
+    text-align: center;
+}

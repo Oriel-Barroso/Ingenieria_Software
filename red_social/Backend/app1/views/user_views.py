@@ -1,3 +1,4 @@
+import email
 from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
@@ -12,7 +13,7 @@ class Users():
     def get_user(req, username):
         user = user_models.Users.objects.filter(username=username).values()
         print(user, 'PRINT DEL USUARIO')
-        return Response(user, status=200)
+        return Response(user[0]["email"], status=200)
 
 
     @csrf_exempt 
