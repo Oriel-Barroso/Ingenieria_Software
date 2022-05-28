@@ -1,5 +1,5 @@
 from django.urls import path
-from app1.views import user_views
+from ..views import user_views
 
 urlpatterns = [
     path('get_user/<username>', user_views.Users.get_user),

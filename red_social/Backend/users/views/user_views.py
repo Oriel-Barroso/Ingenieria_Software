@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 
-from app1.models import user_models
-from app1.serializers.user_serializers import UserSerializer
+from ..models import user_models
+from ..serializers.user_serializers import UserSerializer
 
 
 class Users():

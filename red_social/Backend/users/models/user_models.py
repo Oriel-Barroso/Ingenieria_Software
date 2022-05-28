@@ -6,8 +6,3 @@ class Users(User, models.Model):
     comentario = models.CharField(max_length=70)
     pass
     
-    
-  
-
-    
-         

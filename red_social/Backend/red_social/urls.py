@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.urls import auth_urls, user_urls
+from users.urls import auth_urls, user_urls
 from django.conf.urls import include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app1/', include(user_urls)),
-    path('app1/', include(auth_urls))
+    path('users/', include(user_urls)),
+    path('users/', include(auth_urls))
 ]
