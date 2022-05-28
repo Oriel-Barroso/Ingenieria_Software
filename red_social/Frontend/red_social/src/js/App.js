@@ -13,10 +13,11 @@ export default function App(){
     return (
       
       <div>
+        
         <Nav/>
         <Router >
           <Routes>
-
+            
             <Route path="/" exact element={<Login/>}/>
             <Route path="/home" exact element={<Home/>}/>
             <Route path="/register" exact element={<Register/>}/>

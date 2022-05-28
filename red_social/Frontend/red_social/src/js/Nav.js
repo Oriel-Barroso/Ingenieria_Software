@@ -1,8 +1,11 @@
 import React from 'react';
 import '../styles/Nav.css';
+import { useNavigate} from "react-router-dom";
 
+function Nav(){
+   
 
-export default function Menu(){
+    
     
     return(
         <div className="container">
@@ -14,9 +17,8 @@ export default function Menu(){
                 </div>
             </div>
                     
-            <div className='Add'>
-                <button className ="logout">Logout</button>
-            </div>
+           
         </div>
     );
 }
+export default Nav;
