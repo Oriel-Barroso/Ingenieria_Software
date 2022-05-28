@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
@@ -8,24 +7,6 @@ from app1.serializers.user_serializers import UserSerializer
 from django.http import JsonResponse
 from rest_framework import status
 
-# class Auth():
-#     @csrf_exempt 
-#     @api_view(('POST',))
-#     def registro(req):
-#         data = JSONParser().parse(req)
-
-#         isEmpty = user_services.UserService.get_comment_fk()
-#         if(not isEmpty):
-#             return HttpResponse("Ejemplo de error", status=500)
-
-#         user = user_models.Users.objects.create_user(first_name=data['firstname'],
-#                                         last_name=data['lastname'],
-#                                         email=data['email'],
-#                                         username=data['username'],
-#                                         password=data['password'],
-#                                     )
-#         user.save()
-#         return HttpResponse(user, status=200)
 
 
 class Auth():
@@ -33,16 +14,25 @@ class Auth():
     @csrf_exempt 
     @api_view(('POST',))
     def registro(req):
+<<<<<<< HEAD
         data = JSONParser().parse(req)
         serialazer = UserSerializer(data=data)
         print("hola",data)
+=======
+
+        res = JSONParser().parse(req)
+        serialazer = UserSerializer(data=res)
+        
+>>>>>>> login
         if serialazer.is_valid():
             serialazer.save()
             return JsonResponse(serialazer.data, status=status.HTTP_201_CREATED)
+
         return JsonResponse(serialazer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 
     @csrf_exempt 
+<<<<<<< HEAD
     @api_view(('POST', ))
     def log_user(req):
         if req.method == 'POST':
@@ -54,3 +44,17 @@ class Auth():
                 serializer = UserSerializer(user)
                 return JsonResponse(serializer.data, status=200, safe=False)
             return JsonResponse('No existe', safe=False, status=400)
+=======
+    @api_view(('POST',))
+    def get_user(request):
+
+        users = JSONParser().parse(request) 
+
+        user = user_models.Users.objects.get(username=users['username'], password=users['password'])
+
+        response = UserSerializer(user)
+        
+        return JsonResponse(response.data ,safe= False, status=200)
+
+        
+>>>>>>> login
