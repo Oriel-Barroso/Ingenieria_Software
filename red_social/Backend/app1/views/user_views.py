@@ -9,14 +9,8 @@ class Users():
     @csrf_exempt 
     @api_view(('GET',))
     def get_all_users(req):
-<<<<<<< HEAD
-        user = user_models.Users.objects.all().values()
-        return HttpResponse(user, status=200)
-    
-=======
         user = user_models.Users.objects.all()
         response = UserSerializer(user, many = True)
         return JsonResponse(response.data, safe=False, status=200)
->>>>>>> login
 
 

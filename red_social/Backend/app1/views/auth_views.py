@@ -14,16 +14,10 @@ class Auth():
     @csrf_exempt 
     @api_view(('POST',))
     def registro(req):
-<<<<<<< HEAD
-        data = JSONParser().parse(req)
-        serialazer = UserSerializer(data=data)
-        print("hola",data)
-=======
 
         res = JSONParser().parse(req)
         serialazer = UserSerializer(data=res)
         
->>>>>>> login
         if serialazer.is_valid():
             serialazer.save()
             return JsonResponse(serialazer.data, status=status.HTTP_201_CREATED)
@@ -32,19 +26,6 @@ class Auth():
         
 
     @csrf_exempt 
-<<<<<<< HEAD
-    @api_view(('POST', ))
-    def log_user(req):
-        if req.method == 'POST':
-            data = JSONParser().parse(req)
-            username = data['username']
-            password = data['password']
-            if user_models.User.objects.filter(username=username, password=password).exists():
-                user = user_models.User.objects.get(username=username)
-                serializer = UserSerializer(user)
-                return JsonResponse(serializer.data, status=200, safe=False)
-            return JsonResponse('No existe', safe=False, status=400)
-=======
     @api_view(('POST',))
     def get_user(request):
 
@@ -57,4 +38,3 @@ class Auth():
         return JsonResponse(response.data ,safe= False, status=200)
 
         
->>>>>>> login
