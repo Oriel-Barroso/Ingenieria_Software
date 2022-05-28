@@ -7,6 +7,7 @@ from app1.services import user_services
 from app1.serializers.user_serializers import UserSerializer
 from django.http import JsonResponse
 from rest_framework import status
+from rest_framework.response import Response
 
 # class Auth():
 #     @csrf_exempt 
@@ -34,14 +35,15 @@ class Auth():
     @api_view(('POST',))
     def registro(req):
 
-        data = JSONParser().parse(req)
-        serialazer = UserSerializer(data=data)
-        print("hola",data)
+        res = JSONParser().parse(req)
+        serialazer = UserSerializer(data=res)
+        
         if serialazer.is_valid():
 
             serialazer.save()
 
             return JsonResponse(serialazer.data, status=status.HTTP_201_CREATED)
+          
         return JsonResponse(serialazer.errors, status=status.HTTP_400_BAD_REQUEST)
 
             

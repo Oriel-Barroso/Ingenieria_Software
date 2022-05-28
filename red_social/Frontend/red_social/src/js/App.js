@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from './Login';
 import Nav from './Nav';
 import Home from './Home'
+import Register from './Register'
 
 
 export default function App(){
@@ -18,6 +19,7 @@ export default function App(){
 
             <Route path="/" exact element={<Login/>}/>
             <Route path="/home" exact element={<Home/>}/>
+            <Route path="/register" exact element={<Register/>}/>
           
           </Routes> 
         </Router>

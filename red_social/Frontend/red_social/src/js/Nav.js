@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Nav.css';
-import { useHistory } from "react-router-dom";
+
 
 export default function Menu(){
     
