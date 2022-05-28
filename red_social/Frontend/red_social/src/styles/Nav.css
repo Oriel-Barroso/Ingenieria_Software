@@ -1,5 +1,5 @@
 .container{
-    background: linear-gradient(to bottom, rgb(77, 174, 17) 0%, rgb(61, 138, 25) 100%);
+    background: linear-gradient(to bottom, rgb(60, 120, 23) 0%, rgb(60, 137, 24) 100%);
     margin: 0px auto;
     margin-bottom: 10px;
 
@@ -21,10 +21,4 @@
     display: flex;
     justify-content: center;
 }
-.logout{
-    background-color: aliceblue;
-    text-align: right;
-    border-radius: 30px 30px 30px 30px;
-    width: 100px;
-    text-align: center;
-}
+

@@ -35,6 +35,6 @@ class Auth():
 
         response = UserSerializer(user)
         
-        return JsonResponse(response.data ,safe= False, status=200)
+        return JsonResponse(response.data['username'] ,safe= False, status=200)
 
         
