@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from users.urls import auth_urls, user_urls
 from django.conf.urls import include
+from posts.urls.post_urls import router_posts
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include(user_urls)),
-    path('users/', include(auth_urls))
+    path('users/', include(auth_urls)),
+    path('api/', include(router_posts.urls)),
 ]
